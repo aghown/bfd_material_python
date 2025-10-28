@@ -3,7 +3,7 @@ SQL - Structured Query Language
 Usando SQLite
 
 Requisitos:
-- Instalar extensão:
+- Instalar extensão para VSCode:
     - sqlite do Alexcvzz
     - https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite
 */
@@ -23,10 +23,9 @@ SELECT nome
 FROM Aluno;
 
 -- Retorna as colunas nome, nota1 e nota2 da tabela Aluno
-SELECT 
-    nome,
-    nota1,
-    nota2
+SELECT nome,
+       nota1,
+       nota2
 FROM Aluno;
 
 -- Retorna as colunas nome e nota1 apenas com os registros com nota1 maior ou igual a 7
@@ -66,7 +65,7 @@ ORDER BY media_notas DESC;
 
 -- Mesmo que o anterior, mas retornando apenas os registros com as 10 maiores médias.
 SELECT 
-    nome nome_aluno, 
+    nome AS nome_aluno, 
     nota1,
     nota2,
     (nota1+nota2)/2 AS media_notas
@@ -79,13 +78,5 @@ SELECT id_turma
 FROM Aluno
 GROUP BY id_turma;
 
--- Agrupa os dados com base no id_turma e retorna a contagem de alunos por turma
-SELECT id_turma, COUNT() AS n_alunos
-FROM Aluno
-GROUP BY id_turma;
 
--- Agrupa os dados com base no id_turma e retorna as turmas com mais de 20 alunos
-SELECT id_turma, COUNT() AS n_alunos
-FROM Aluno
-GROUP BY id_turma
-HAVING n_alunos > 20;
+

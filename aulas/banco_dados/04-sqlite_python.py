@@ -7,7 +7,7 @@ print(BASE_DIR)
 
 # Caminho completo do banco
 DB_PATH = BASE_DIR / "db" / "escola_v2.db"
-print(DB_PATH)
+#print(DB_PATH)
 
 db_connection = sqlite3.connect(DB_PATH)
 
