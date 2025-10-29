@@ -23,5 +23,7 @@ FROM Aluno
 for row in cursor:
     print(row)
 
+print([description[0] for description in cursor.description])
+
 # Encerra a conexao com o banco de dados
 db_connection.close()
